@@ -6,6 +6,18 @@
     <p>Au petit Village est une entreprise qui confectionne des figurines inspirées de la bande
     dessinée Astérix et Obélix.</p>
     <h2>Produits</h2>
+    <input type="text" placeholder="filterByName" #filter>
+    <button class="Name" type="button" (click)="filterResult(filter.value)">Cherche</button>
+    <button value="Price">Prix du + au -</button>
+    <button value="Unprice">Prix du - au +</button>
+    <ul>
+        <li *ngFor="let produit of ( produits | filterByName | sortByPrice | sortByUnprice)">
+            <a [routerLink]="['/product', produit.id]" ><img src={{produit.photo}}/></a>
+            {{produit.name}}
+            {{produit.description}}
+            {{produit.prix}}
+        </li>
+    </ul>
     <br />
     <app-footer></app-footer>
 </div>

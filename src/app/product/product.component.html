@@ -2,16 +2,14 @@
     <app-header></app-header>
     <br />
     <h1>Produits</h1>
-
     <ul>
-        <li *ngFor="let produit of ( produits | filterByName )">
+        <li>
             <img src={{produit.photo}} />
             {{produit.name}}
             {{produit.description}}
             {{produit.prix}}
         </li>
     </ul>
-    
     <br />
     <app-footer></app-footer>
 </div>
