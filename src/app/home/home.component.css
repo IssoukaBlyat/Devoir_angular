@@ -5,3 +5,11 @@ div {
 img {
     max-width: 200px;
 }
+
+h1,h2 {
+    font-family: "BubbleBodyNeue", serif;
+}
+
+p, li {
+    font-family: "Comfortaa", serif;
+}

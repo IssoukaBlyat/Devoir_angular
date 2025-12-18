@@ -11,7 +11,7 @@
     <button value="Price">Prix du + au -</button>
     <button value="Unprice">Prix du - au +</button>
     <ul>
-        <li *ngFor="let produit of ( produits | filterByName | sortByPrice | sortByUnprice)">
+        <li *ngFor="let produit of  produits | filterByName | sortByPrice | sortByUnprice">
             <a [routerLink]="['/product', produit.id]" ><img src={{produit.photo}}/></a>
             {{produit.name}}
             {{produit.description}}
