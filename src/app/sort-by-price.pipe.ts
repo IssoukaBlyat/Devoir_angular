@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { orderBy } from 'lodash'; 
 
 @Pipe({
   name: 'sortByPrice',
@@ -6,13 +7,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortByPricePipe implements PipeTransform {
 
-  transform(produit: any[]): any [] {
-    console.log(produit);
-    return produit.sort((a:any,b:any) => {
-      if(a.prix < b.prix) { return -1;}
-      else if(a.prix > b.prix) { return 1;}
-      else return 0
-    });
+  transform(value: boolean , array: any, arg2: any): any[] {
+    console.log(this);
+    if(this.boolean==true) {
+      return orderBy(array, "cost", 'asc');;
+    }else{
+      return orderBy(array, "cost", 'desc');;
+    }
   }
 
 }

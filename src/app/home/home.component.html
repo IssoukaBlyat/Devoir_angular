@@ -8,10 +8,10 @@
     <h2>Produits</h2>
     <input type="text" placeholder="filterByName" #filter>
     <button class="Name" type="button" (click)="filterResult(filter.value)">Cherche</button>
-    <button value="Price">Prix du + au -</button>
-    <button value="Unprice">Prix du - au +</button>
+    <button value="Price" (click)="price=true">Prix du + au -</button>
+    <button value="Unprice" (click)="price=false">Prix du - au +</button>
     <ul>
-        <li *ngFor="let produit of  produits | filterByName | sortByPrice | sortByUnprice">
+        <li *ngFor="let produit of  produits | filterByName | sortByPrice">
             <a [routerLink]="['/product', produit.id]" ><img src={{produit.photo}}/></a>
             {{produit.name}}
             {{produit.description}}

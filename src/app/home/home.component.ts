@@ -6,18 +6,18 @@ import { FooterComponent } from "../footer/footer.component";
 import { ProductsService } from '../products.service'; 
 import { FilterByNamePipe } from '../filter-by-name.pipe';
 import { SortByPricePipe } from '../sort-by-price.pipe';
-import { SortByUnpricePipe } from '../sort-by-unprice.pipe';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, NgFor, FilterByNamePipe, SortByPricePipe, SortByUnpricePipe, FormsModule, ReactiveFormsModule, RouterLink],
+  imports: [HeaderComponent, FooterComponent, NgFor, FilterByNamePipe, SortByPricePipe, FormsModule, ReactiveFormsModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
   produits: any[] = [];
+  price: boolean[] = [];
   constructor(private produitsService: ProductsService) {}
   filterResult(text: string) {
     if (!text) {
